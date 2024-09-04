@@ -1,0 +1,10 @@
+services:
+  #  The name will automatically become a network alias
+  app:
+    image: python:3.10-slim
+    command: sh -c "pip install -r requirements.txt && python manager.py runserver 127.0.0.1:8000"
+    ports:
+      - 127.0.0.1:8000:8000
+    working_dir: /app
+    volumes:
+      - ./:/app
